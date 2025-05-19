@@ -4,6 +4,19 @@ This repository contains the complete solution for a technical assignment involv
 
 ---
 
+## ⚙️ Environment Setup
+
+To recreate the exact environment:
+
+```bash
+conda env create -f environment.yaml
+conda activate your_env_name
+```
+
+---
+
+
+
 ## 📦 Data Creation
 
 To generate the dummy dataset, run:
@@ -132,6 +145,12 @@ This will:
 - Load the test videos from `dummy_data.py`
 - Convert them into frames
 - Save the frames to `./frames_see/`
+
+---
+
+## 📄 Project Report
+
+A more detailed study and explanation of the methodology, experiments, and results will be provided in a `report.pdf` file.
 
 ---
 
