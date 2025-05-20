@@ -142,6 +142,8 @@ python inference.py \
 
 📌 Please be careful when loading bert like model, remember if you trained your model with or without text so that you can adapt your command accordingly.
 
+📌 In conclusion, for inference please use the same parameters in input that you used to train your model so that there is no missmatch.
+
 
 ---
 
