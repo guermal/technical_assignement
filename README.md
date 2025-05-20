@@ -130,6 +130,12 @@ python inference.py \
 
 📌 You must specify `--video_dir` with frames for inference.  
 📌 Checkpoints must be saved in `./checkpoints/`.
+📌 change the saved_model.pth in inference.py accordingly to how you saved the name in train_code.py .
+📌 for vlm for classification if --use_text True also provide in the command --text_input 'your text' in this example you can look at the VLoader.py and get inspiration for a text input .
+📌 for vlms the vision backbone is always frozen for 1 gpu training and inference memory issues, the llm backbone is either frozen also or trained with lora. 
+📌 the checkpoints that are going to be provided uses videomae+gpt2 with gpt2 either frozen or on lora (the vision backbone always frozen) | bert with videomae frozen both or frozen vision only or frozen vision and bert with lora| for the vision only you can either load trained model fully finetunes, frozen backbone or with lora . Hence, adapt your command to one of these types unless you train your model with other parameters.
+📌 Please be careful when loading bert like model, remember if you trained your model with or without text so that you can adapt your command accordingly.
+
 
 ---
 
