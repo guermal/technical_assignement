@@ -190,7 +190,9 @@ def main():
             model = build_vlm_model(video_transformers[config['vision_model']][0],causal_language_models[config['language_model']],config['num_classes'],video_transformers[config['vision_model']][1],llm_target_modules=None,captioning=config['captioning'],use_text=config['use_text'],use_lora_vison=config['use_lora_vision'],use_lora_llm=config['use_lora_llm'],freeze_visionbackbone=config['freeze_visionbackbone'],freeze_llmbackbone=config['freeze_llmbackbone'])
             model_name = config['vision_model']+'_'+config['language_model']
             model.load_state_dict(ckpt,strict=False)
-            _,output_text = model(torch.unsqueeze(video_input,0),text_inputs=None)
+            model.train(False)
+            with torch.set_grad_enabled(False):
+                _,output_text = model(torch.unsqueeze(video_input,0),text_inputs=None)
             print(output_text)
         else:
             if config['use_text']:
@@ -207,7 +209,9 @@ def main():
             model.load_state_dict(ckpt,strict=False)
             if config['use_text']:
                 if config['text_input']:
-                    output = model(torch.unsqueeze(video_input,0),[config['text_input']])
+                    model.train(False)
+                    with torch.set_grad_enabled(False):
+                        output = model(torch.unsqueeze(video_input,0),[config['text_input']])
                     pclass = torch.argmax(output, dim=1).item()
                     pclass = 'class_'+str(pclass)
                     print('predicted class: ',CLASS_DESCRIPTIONS[pclass])
@@ -215,7 +219,9 @@ def main():
                     print('you should provide a text input for this model')
                     exit()
             else:
-                output = model(torch.unsqueeze(video_input,0),text_inputs = None)
+                model.train(False)
+                with torch.set_grad_enabled(False):
+                    output = model(torch.unsqueeze(video_input,0),text_inputs = None)
                 pclass = torch.argmax(output, dim=1).item()
                 pclass = 'class_'+str(pclass)
                 print('predicted class: ',CLASS_DESCRIPTIONS[pclass])
@@ -230,7 +236,9 @@ def main():
         model,_ = build_vision_model(video_transformers[config['vision_model']][0],video_transformers[config['vision_model']][1], config['num_classes'], use_lora=config['use_lora_vision'], freeze_backbone=config['freeze_visionbackbone'])
         model_name = config['vision_model']
         model.load_state_dict(ckpt,strict=False)
-        output,_ = model(torch.unsqueeze(video_input,0))
+        model.train(False)
+        with torch.set_grad_enabled(False):
+            output,_ = model(torch.unsqueeze(video_input,0))
         pclass = torch.argmax(output, dim=1).item()
         pclass = 'class_'+str(pclass)
         print('predicted class: ',CLASS_DESCRIPTIONS[pclass])
