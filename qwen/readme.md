@@ -69,7 +69,25 @@ synthetic_videos/
 checkpoints/
 Make sure these patterns are included in your .gitignore.
 
+---
 
+## ✅ Summary
+
+Task	Script	Description
+Generate Dataset	dummy_video.py	Creates synthetic .mp4 videos by class
+Train Model	main.py	Fine-tunes Qwen2.5-VL using LoRA
+Run Inference	main.py	Generates a caption from a video
+
+
+
+| Task                | Script                         | Description                          |
+|---------------------|--------------------------------|--------------------------------------|
+| Dataset Generation  | `dummy_video.py`               | Creates dummy video tensors          |
+| Train Model         | `main.py (with params)`        | Fine-tunes Qwen2.5-VL using LoRA     |
+| Run Inference       | `main.py (with params)`        | Generates a caption from a video     |
+
+
+---
 
 
 ## ✨ Credits
