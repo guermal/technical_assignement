@@ -1,0 +1,7 @@
+batch_size: 2
+seq_len: 16
+gt_folder: '../synthetic_dataset'
+lora: False
+inference: False
+train: true
+video_inference: './dummy_dir'
