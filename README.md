@@ -4,6 +4,13 @@ This repository contains the complete solution for a technical assignment involv
 
 ---
 
+## direct inference
+
+to run a quick model refer to the qwen folder and follow its readme file. For more insight and indeep analysis use this folder.
+
+
+
+
 ## ⚙️ Environment Setup
 
 To recreate the exact environment:
