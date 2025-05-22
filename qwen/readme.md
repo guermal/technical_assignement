@@ -95,7 +95,7 @@ Run Inference	main.py	Generates a caption from a video
 This work builds upon the Qwen2.5-VL-3B-Instruct model released by Alibaba, and leverages Hugging Face's Transformers and PEFT libraries.
 
 usefull websites : 
- [Qwen2.5-VL-3B-Instruct]([https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl#4-fine-tune-the-model-using-trl)
+ [Qwen2.5-VL-3B-Instruct][https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl#4-fine-tune-the-model-using-trl)
 
 To go deeper in QWEN code (data_preparation, model_init...)
  [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL/tree/d2240f11656bfe404b9ba56db4e51cd09f522ff1)
