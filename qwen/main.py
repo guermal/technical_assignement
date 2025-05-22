@@ -136,7 +136,10 @@ def main():
                 ).to(device)
 
                 generated_ids = model.generate(**model_inputs, max_new_tokens=max_new_tokens)
-                pred = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+                trimmed_generated_ids = [out_ids[len(in_ids) :] for in_ids, out_ids in zip(model_inputs.input_ids, generated_ids)]
+
+                # Decode result
+                pred = processor.batch_decode(trimmed_generated_ids, skip_special_tokens=True,clean_up_tokenization_spaces=False)[0]
 
                 # Get the reference label from sample
                 ref = sample[2]["content"][0]["text"]
