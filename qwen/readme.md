@@ -100,4 +100,5 @@ usefull websites :
 To go deeper in QWEN code (data_preparation, model_init...)
  [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL/tree/d2240f11656bfe404b9ba56db4e51cd09f522ff1)
 
+For full manipulation of hugging-face transformers refer to [API](https://huggingface.co/docs/transformers/index)
 
