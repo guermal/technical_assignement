@@ -233,8 +233,11 @@ def main():
         # Generate prediction
         generated_ids = model.generate(**model_inputs, max_new_tokens=64)
 
+        
+        trimmed_generated_ids = [out_ids[len(in_ids) :] for in_ids, out_ids in zip(model_inputs.input_ids, generated_ids)]
+
         # Decode result
-        caption = processor.tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+        caption = processor.batch_decode(trimmed_generated_ids, skip_special_tokens=True,clean_up_tokenization_spaces=False)[0]
 
         print(f" Generated Caption: {caption}")
         return caption
