@@ -6,7 +6,11 @@ This repository contains the complete solution for a technical assignment involv
 
 ## direct inference
 
-- To run a quick train/inference model refer to the qwen folder and follow its readme file. 
+- To run a quick train/inference model refer to the qwen folder and follow its readme file.
+
+- To train quickly videomae got to videomae folder and run: python main.py --gt_folder ../qwen/synthetic_video
+
+  Not that you need to have already created the data in qwen folder 
 
 - For more low level manipulation and from (scratch building) insight and indeep analysis use this folder.
 
