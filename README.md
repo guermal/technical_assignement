@@ -4,6 +4,17 @@ This repository contains the complete solution for a technical assignment involv
 
 ---
 
+## direct inference
+
+- To run a quick train/inference model refer to the qwen folder and follow its readme file. 
+
+- For more low level manipulation and from (scratch building) insight and indeep analysis use this folder.
+
+- Preferably start with qwen folder its easier to manipulate, then you can refer to the shared pdf file to understand this git
+
+
+
+
 ## ⚙️ Environment Setup
 
 To recreate the exact environment:
